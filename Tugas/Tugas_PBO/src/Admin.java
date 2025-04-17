@@ -1,21 +1,21 @@
-import java.util.Scanner;
 
-public class Admin {
-    Scanner scanner = new Scanner(System.in);
-    String validUsername = "Admin";
-    String validPassword = "gilbert";
+public class Admin extends User {
+    private String username;
+    private String password;
 
-    void login() {
-        System.out.print("Masukkan username: ");
-        String username = scanner.nextLine();
+    public Admin(String nama, String nim, String username, String password){
+        super(nama, nim);
+        this.username = username;
+        this.password = password;
+    }
 
-        System.out.print("Masukkan password: ");
-        String password = scanner.nextLine();
+    @Override
+    public boolean login(String inputUser, String inputPassword){
+        return this.username.equals(inputUser) && this.password.equals(inputPassword);
+    }
 
-        if (username.equals(validUsername) && password.equals(validPassword)) {
-            System.out.println("Login Admin berhasil!");
-        } else {
-            System.out.println("Login gagal! Username atau password salah.");
-        }
+    @Override
+    public void displayInfo(){
+        System.out.println("Login berhasil! Selamat datang, " + getNama() + "(Admin)");
     }
 }
