@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
 import java.time.LocalDate;
 
@@ -8,16 +6,16 @@ public class Main {
         String nama;
         String jenisKelamin;
         int tahunLahir;
-        Scanner boom = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.print("\nMasukan Nama          : ");
-        nama = boom.nextLine();
+        nama = scan.nextLine();
 
         System.out.print("Masukan Jenis Kelamin : ");
-        jenisKelamin = boom.nextLine();
+        jenisKelamin = scan.nextLine();
 
         System.out.print("Masukan Tahun Lahir   : ");
-        tahunLahir = boom.nextInt();
+        tahunLahir = scan.nextInt();
 
 
         if (jenisKelamin.equalsIgnoreCase("L")) {
@@ -37,7 +35,7 @@ public class Main {
         System.out.println("Jenis Kelamin : " +jenisKelamin);
         System.out.println("Umur          : " + umur + "tahun");
 
-        boom.close();
+        scan.close();
 
     }
 }
